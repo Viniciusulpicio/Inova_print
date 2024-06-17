@@ -121,9 +121,11 @@
  .logo-home {
      width: 9vw;
      margin-bottom: 2vh;
+     margin-top: 2.5vh;
  }
 
  .botao-comprar {
+    text-decoration: none;
      display: flex;
      flex-direction: row;
      justify-content: center;
@@ -164,6 +166,7 @@
      display: flex;
      width: 80vw;
      justify-content: space-evenly;
+     margin-bottom: 2vh;
  }
 
 .img-servico{
@@ -258,8 +261,8 @@
  }
 
  .img-produto{
-    width: 130px;
-    height: 199px;
+    width: 9vw;
+    height: 18.9vh;
  }
 
  .preco-desconto {
