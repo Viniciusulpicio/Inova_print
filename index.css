@@ -34,10 +34,10 @@
  /* ---------------------- CSS da nav-bar -------------------------------- */
  .nav-bar {
      background-color: #0E0E0E;
-     height: 8vh;
+     height: 11vh;
      display: flex;
      justify-content: center;
-     font-size: 1.8vh;
+     font-size: 2vh;
      font: bold;
  }
 
@@ -83,7 +83,9 @@
 
  .home {
      background-image: url("img/fundo_home.png");
+     background-repeat: no-repeat;
      background-position: center;
+     background-size: cover;
      height: 65vh;
  }
 
@@ -162,8 +164,11 @@
      display: flex;
      width: 80vw;
      justify-content: space-evenly;
-
  }
+
+.img-servico{
+    width: 7vw;
+}
 
  .card-servico {
      width: 10vw;
@@ -204,6 +209,10 @@
      font-size: 1.6vh;
  }
 
+ .cartao-visita{
+    width: 30vw;
+ }
+
  /* ---------------------- Fim do CSS pagina serviço -------------------------------- */
 
  /* ---------------------- CSS pagina produtos  -------------------------------- */
@@ -215,7 +224,7 @@
      display: flex;
      align-items: center;
      justify-content: center;
-     font-size: 5vh;
+     font-size: 4vh;
  }
 
  .card-produto {
@@ -246,6 +255,11 @@
  .preco-todo {
      text-decoration-line: line-through;
      color: #767070;
+ }
+
+ .img-produto{
+    width: 130px;
+    height: 199px;
  }
 
  .preco-desconto {
@@ -300,8 +314,8 @@
      flex-direction: column;
      align-items: center;
      padding: 2px 10px 0px;
-     width: 66vw;
-     height: 42vh;
+     width: 68vw;
+     height: 65vh;
      background: linear-gradient(91.08deg, #0D1F47 0%, #142C62 30%, #0A1329 63%, #0C0F18 100%);
      border-top: 2px solid #333333;
      border-radius: 20px;
@@ -333,6 +347,8 @@
      margin-bottom: 2vh;
  }
 
+
+
  .garantia{
     display: flex;
     align-items: center;
@@ -344,6 +360,7 @@
 .div-garantia{
     display: flex;
     justify-content: center;
+    margin-bottom: 7vh;
 }
 
 .conteudo-garantia{
