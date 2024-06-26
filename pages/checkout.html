@@ -8,51 +8,150 @@
 <body>
     <div class="nav-bar">
         <div class="topicos">
-        <a href="/index.html#home-page" class="button-navbar">Home</a>
-        <a href="/index.html#servicos" class="button-navbar">Nossos Serviços</a>
-        <a href="/index.html#conteudo-somos" class="button-navbar">Quem somos ?</a>
-        <a href="/index.html#produtos" class="button-navbar">Produtos</a>
-        <a href="/index.html#depoimentos" class="button-navbar">Depoimentos</a>
-    </div>
+            <a href="/index.html#home-page" class="button-navbar">Home</a>
+            <a href="/index.html#servicos" class="button-navbar">Nossos Serviços</a>
+            <a href="/index.html#conteudo-somos" class="button-navbar">Quem somos ?</a>
+            <a href="/index.html#produtos" class="button-navbar">Produtos</a>
+            <a href="/index.html#depoimentos" class="button-navbar">Depoimentos</a>
+        </div>
     </div>
 
     <div class="checkeout">
-    <div class="conteudo-checkout">
-        <div class="imagem-produto">
-            <img src="/img/filamento_branco.png" alt="imagem do produto" class="imagem-produto-checkout">
+        <div class="conteudo-checkout">
+            <div class="imagem-produto">
+                <img id="product-image" src="/img/filamento_branco.png" alt="imagem do produto" class="imagem-produto-checkout">
+            </div>
+        </div>
+
+        <div class="texto-checkout">
+            <h1 class="titulo-checkout" id="product-name"></h1>
+            <p class="preco-todo-checkout" id="product-price"></p>
+            <p class="preco-desconto-checkout" id="product-discount-price"></p>
+            <p class="paragrafo-checkout" id="product-description">À vista no pix com 10% OFF <br> <span class="span-negrito">R$105,44</span> Em até 2x de <span class="span-negrito">R$52,72</span> sem juros no cartão</p>
+            <p class="forma-pagamento">Formas de pagamento:</p>
+
+            <form class="escolher-pagamento">
+                <div class="input-pagamento">
+                    <input type="radio" class="input-radio" name="payment-method" value="debit">
+                    <label class="formas-pagamento">Débito: <img src="/img/cartao_debito.png" alt="Bandeiras cartão débito" class="imagem-pagamento"></label>
+                </div>
+
+                <div class="input-pagamento">
+                    <input type="radio" class="input-radio" name="payment-method" value="credit">
+                    <label class="formas-pagamento">Crédito: <img src="/img/cartao_credito.png" alt="Bandeiras cartão crédito" class="imagem-pagamento"></label>
+                </div>
+
+                <div class="input-pagamento">
+                    <input type="radio" class="input-radio" name="payment-method" value="pix">
+                    <label class="formas-pagamento">Pix: <img src="/img/pix.png" alt="Pix" class="imagem-pagamento-pix"></label>
+                </div>
+            </form>
+
+            <div class="div-botao-comprar"><a class="botao-comprar-checkout" href="#produtos">COMPRAR AGORA</a></div>
         </div>
     </div>
 
-    <div class="texto-checkout">
-        <h1 class="titulo-checkout">Filamento PLA Speed Premium Branco</h1>
-        <p class="preco-todo-checkout">R$129,99</p>
-        <p class="preco-desconto-checkout">R$94,90</p>
-        <p class="paragrafo-checkout">À vista no pix com 10% OFF <br> <span class="span-negrito">R$105,44</span> Em até 2x de <span class="span-negrito">R$52,72</span> sem juros no cartão</p>
-        <p class="forma-pagamento">Formas de pagamento:</p>
+    <script>
+        // Banco de dados de produtos
+        const products = {  
+            1: {
+                name: "Filamento PLA Speed Premium Branco",
+                price: "R$129,99",
+                discountPrice: "R$94,90",
+                image: "/img/filamento_branco.png",
+                description: "À vista no pix com 10% OFF R$105,44 Em até 2x de R$52,72 sem juros no cartão"
+            },
+            2: {
+                name: "Filamento PLA Speed Premium Preto",
+                price: "R$129,99",
+                discountPrice: "R$94,90",
+                image: "/img/filamento_preto.png",
+                description: "À vista no pix com 10% OFF R$105,44 Em até 2x de R$52,72 sem juros no cartão"
+            },
+            3: {
+                name: "Filamento ABS Speed Premium Preto",
+                price: "R$74,44",
+                discountPrice: "R$65,69",
+                image: "/img/filamento_pla_preto.png",
+                description: "À vista no pix com 10% OFF R$59,12 Em até 2x de R$32,85 sem juros no cartão"
+            },
+            4: {
+                name: "Pack de 5 Cores PLA - 1,75mm",
+                price: "R$175,44",
+                discountPrice: "R$124,30",
+                image: "/img/filamento_pack5.png",
+                description: "À vista no pix com 10% OFF R$111,87 Em até 2x de R$62,15 sem juros no cartão"
+            },
+            5: {
+                name: "Bico para Impressora 3D",
+                price: "R$79,42",
+                discountPrice: "R$63,00",
+                image: "/img/bico_impressora.png",
+                description: "À vista no pix com 10% OFF R$56,70 Em até 2x de R$31,50 sem juros no cartão"
+            },
+            6: {
+                name: "Adesivo Líquido Fixador de Mesa",
+                price: "R$24,44",
+                discountPrice: "R$22,20",
+                image: "/img/adesivo_liquido.png",
+                description: "À vista no pix com 10% OFF R$19,98 Em até 2x de R$11,10 sem juros no cartão"
+            },
+            7: {
+                name: "Impressora 3D Ender 3 Pro 32 Bits",
+                price: "R$1755,90",
+                discountPrice: "R$1580,31",
+                image: "/img/impressora_ender.png",
+                description: "À vista no pix com 10% OFF R$1422,28 Em até 12x de R$147,52 sem juros no cartão"
+            },
+            8: {
+                name: "Impressora 3D Ender 3 Max Neo",
+                price: "R$3400,34",
+                discountPrice: "R$1789,90",
+                image: "/img/impressora_endermax.png",
+                description: "À vista no pix com 10% OFF R$1600,91 Em até 12x de R$149,16 sem juros no cartão"
+            },
+            9: {
+                name: "Manutenção de Máquinas",
+                price: "Orçamento",
+                discountPrice: "Orçamento",
+                image: "/img/manutencao.png",
+                description: "Serviço de manutenção para impressoras 3D. Solicite um orçamento personalizado."
+            },
+            10: {
+                name: "Impressão de Peças",
+                price: "Orçamento",
+                discountPrice: "Orçamento",
+                image: "/img/impressao.png",
+                description: "Serviço de impressão de peças 3D. Solicite um orçamento personalizado."
+            }
+        };
 
-        <form class="escolher-pagamento">
-            <div class="input-pagamento">
-            <input type="radio" class="input-radio">
-            <label class="formas-pagamento">Débito: <img src="/img/cartao_debito.png" alt="Bandeiras cae" class="imagem-pagamento"></label>
-        </div>
+        // Função para obter os parâmetros da URL
+        function getQueryParams() {
+            const params = {};
+            window.location.search.substring(1).split("&").forEach(function(part) {
+                const pair = part.split("=");
+                params[pair[0]] = decodeURIComponent(pair[1]);
+            });
+            return params;
+        }
 
-        <div class="input-pagamento">
-            <input type="radio" class="input-radio">
-            <label class="formas-pagamento">Crédito: <img src="/img/cartao_credito.png" alt="Bandeiras cartão crédito" class="imagem-pagamento"></label>
-        </div>
+        // Obtendo ID do produto da URL
+        const queryParams = getQueryParams();
+        const productId = queryParams.id;
 
-        <div class="input-pagamento">
-            <input type="radio" class="input-radio">
-            <label class="formas-pagamento">Pix: <img src="/img/pix.png" alt="Pix" class="imagem-pagamento-pix"></label>
-        </div>
-        </form>
+        // Carregando dados do produto na página
+        if (products[productId]) {
+            document.getElementById("product-name").innerText = products[productId].name;
+            document.getElementById("product-price").innerText = products[productId].price;
+            document.getElementById("product-discount-price").innerText = products[productId].discountPrice;
+            document.getElementById("product-image").src = products[productId].image;
+            document.getElementById("product-description").innerText = products[productId].description;
+        } else {
+            document.body.innerHTML = "<h1>Produto não encontrado</h1>";
+        }
+    </script>
 
-        <div class="div-botao-comprar"><a class="botao-comprar-checkout" href="#produtos">COMPRAR AGORAS</a></div>
-
-    </div>
-
-</div>
 </body>
 <link rel="stylesheet" href="/index.css">
-<script src="script.js"></script>   
 </html>

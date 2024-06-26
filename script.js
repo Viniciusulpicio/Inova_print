@@ -12,3 +12,5 @@ document.addEventListener("DOMContentLoaded", function() {
     loadContent('./pages/produtos.html', 'produtos');
     loadContent('./pages/depoimentos.html', 'depoimentos');
 });
+
+
