@@ -445,7 +445,8 @@
     color: black;
     display: flex;
     flex-direction: column;
-    border-radius: 50px;
+    border-radius: 30px;
+    padding: 0.5vh;
 }
 
 .imagem-pagamento{
